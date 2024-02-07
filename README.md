@@ -1,1 +1,2 @@
-"#ping-pong" 
+# Ping-pong 
+# Jogo para treinamento
