@@ -8,8 +8,22 @@ const field = {
     h: window.innerHeight,
     draw: function () {
         canvasCtx.fillStyle = "#286047"
-        canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+        canvasCtx.fillRect(0, 0, this.w, this.h)
     },
+}
+
+const line = {
+    w: 15,
+    h: field.h,
+    draw: function () {
+        canvasCtx.fillStyle = "#ffffff"
+        canvasCtx.fillRect(
+            field.w / 2 - this.w / 2,
+            0,
+            this.w,
+            this.h)
+
+    }
 }
 
 function setup() {
@@ -21,18 +35,18 @@ function setup() {
 
 function draw() {
     field.draw()
+    line.draw()
 
 
 
-    canvasCtx.fillStyle = "#ffffff"
+
     // const x = window.innerWidth / 2 - lineWidth / 2
     // const y = 0
     // const w = lineWidth
     // const h = window.innerHeight
 
     //draw line central
-    canvasCtx.fillRect(window.innerWidth / 2 - lineWidth / 2, 0,
-        lineWidth, window.innerHeight)
+
 
 
     //draw left racket
