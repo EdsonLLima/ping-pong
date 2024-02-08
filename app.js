@@ -1,7 +1,6 @@
 const canvasEl = document.querySelector("canvas")
 const canvasCtx = canvasEl.getContext("2d")
-
-const lineWidth = 15
+const gapX = 10
 
 const field = {
     w: window.innerWidth,
@@ -17,12 +16,27 @@ const line = {
     h: field.h,
     draw: function () {
         canvasCtx.fillStyle = "#ffffff"
-        canvasCtx.fillRect(
-            field.w / 2 - this.w / 2,
-            0,
-            this.w,
-            this.h)
+        canvasCtx.fillRect(field.w / 2 - this.w / 2, 0, this.w, this.h)
+    }
+}
 
+const leftPaddle = {
+    x: gapX,
+    y: 0,
+    w: line.w,
+    h: 200,
+    draw: function () {
+        canvasCtx.fillRect(this.x, this.y, this.w, this.h)
+    }
+}
+
+const rightPaddle = {
+    x: field.w - line.w - gapX,
+    y: 200,
+    w: line.w,
+    h: 200,
+    draw: function () {
+        canvasCtx.fillRect(this.x, this.y, this.w, this.h)
     }
 }
 
@@ -36,28 +50,19 @@ function setup() {
 function draw() {
     field.draw()
     line.draw()
+    leftPaddle.draw()
+    rightPaddle.draw()
 
 
 
 
-    // const x = window.innerWidth / 2 - lineWidth / 2
-    // const y = 0
-    // const w = lineWidth
-    // const h = window.innerHeight
-
-    //draw line central
 
 
+    //draw left paddle
 
-    //draw left racket
-    canvasCtx.fillRect(10, 100, lineWidth, 200)
 
     //draw right racket
-    canvasCtx.fillRect(
-        window.innerWidth - lineWidth - 10,
-        200,
-        lineWidth,
-        200)
+
 
     //draw bol
     canvasCtx.beginPath()
