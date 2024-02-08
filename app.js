@@ -3,16 +3,24 @@ const canvasCtx = canvasEl.getContext("2d")
 
 const lineWidth = 15
 
+const field = {
+    w: window.innerWidth,
+    h: window.innerHeight,
+    draw: function () {
+        canvasCtx.fillStyle = "#286047"
+        canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+    },
+}
+
 function setup() {
-    canvasEl.width = window.innerWidth
-    canvasEl.height = window.innerHeight
-    canvasCtx.width = window.innerWidth
-    canvasCtx.height = window.innerHeight
+    canvasEl.width = field.w
+    canvasEl.height = field.h
+    canvasCtx.width = field.w
+    canvasCtx.height = field.h
 }
 
 function draw() {
-    canvasCtx.fillStyle = "#286047"
-    canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+    field.draw()
 
 
 
