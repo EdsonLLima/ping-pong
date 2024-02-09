@@ -40,6 +40,21 @@ const rightPaddle = {
     }
 }
 
+const ball = {
+    x: 350,
+    y: 400,
+    r: 20,
+    draw: function () {
+        canvasCtx.fillStyle = "#ffffff"
+        canvasCtx.beginPath()
+        canvasCtx.arc(this.x, this.y, this.r, 0, 2.0 * Math.PI, false)
+        canvasCtx.fill()
+    }
+
+
+
+}
+
 function setup() {
     canvasEl.width = field.w
     canvasEl.height = field.h
@@ -52,12 +67,10 @@ function draw() {
     line.draw()
     leftPaddle.draw()
     rightPaddle.draw()
+    ball.draw()
 
 
-    //draw bol
-    canvasCtx.beginPath()
-    canvasCtx.arc(200, 500, 20, 0, 2.0 * Math.PI, false)
-    canvasCtx.fill()
+
 
     //draw scoreboard
     canvasCtx.font = "bold 72px Arial"
