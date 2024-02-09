@@ -41,8 +41,8 @@ const rightPaddle = {
 }
 
 const ball = {
-    x: 350,
-    y: 400,
+    x: 160,
+    y: 200,
     r: 20,
     draw: function () {
         canvasCtx.fillStyle = "#ffffff"
@@ -50,8 +50,19 @@ const ball = {
         canvasCtx.arc(this.x, this.y, this.r, 0, 2.0 * Math.PI, false)
         canvasCtx.fill()
     }
+}
 
-
+const score = {
+    human: 1,
+    computer: 2,
+    draw: function () {
+        canvasCtx.font = "bold 72px Arial"
+        canvasCtx.textAlign = "center"
+        canvasCtx.textBaseline = "top"
+        canvasCtx.fillStyle = "#01341D"
+        canvasCtx.fillText(this.human, field.w / 4, 50)
+        canvasCtx.fillText(this.computer, field.w / 4 + field.w / 2, 50)
+    }
 
 }
 
@@ -67,21 +78,8 @@ function draw() {
     line.draw()
     leftPaddle.draw()
     rightPaddle.draw()
+    score.draw()
     ball.draw()
-
-
-
-
-    //draw scoreboard
-    canvasCtx.font = "bold 72px Arial"
-    canvasCtx.textAlign = "center"
-    canvasCtx.textBaseline = "top"
-    canvasCtx.fillStyle = "01341D"
-    canvasCtx.fillText("3", window.innerWidth / 4, 50)
-    canvasCtx.fillText("1",
-        window.innerWidth / 4 + window.innerWidth / 2,
-        50)
-
 
 }
 
