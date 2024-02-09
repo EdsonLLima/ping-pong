@@ -54,16 +54,6 @@ function draw() {
     rightPaddle.draw()
 
 
-
-
-
-
-    //draw left paddle
-
-
-    //draw right racket
-
-
     //draw bol
     canvasCtx.beginPath()
     canvasCtx.arc(200, 500, 20, 0, 2.0 * Math.PI, false)
