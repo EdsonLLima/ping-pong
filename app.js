@@ -1,6 +1,7 @@
 const canvasEl = document.querySelector("canvas")
 const canvasCtx = canvasEl.getContext("2d")
 const gapX = 10
+const mouse = {x:0, y:0}
 
 const field = {
     w: window.innerWidth,
