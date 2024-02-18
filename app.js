@@ -40,8 +40,12 @@ const rightPaddle = {
     y: 200,
     w: line.w,
     h: 200,
+    _move: function(){
+        this.y = ball.y
+    },
     draw: function () {
         canvasCtx.fillRect(this.x, this.y, this.w, this.h)
+        this._move()
     }
 }
 
